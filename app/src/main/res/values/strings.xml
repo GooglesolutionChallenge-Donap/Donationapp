@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Donationapp</string>
+    <string name="signup">New user? <b>Sign Up</b></string>
+</resources>
