@@ -6,26 +6,43 @@
     android:layout_height="match_parent"
     android:background="@color/light_bg"
     tools:context=".login">
+
+    <soup.neumorphism.NeumorphImageButton
+        android:id="@+id/login_backbtn"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+
+        android:src="@drawable/back_arrowbtnicon"
+        app:neumorph_shadowElevation="5dp"
+        app:neumorph_shapeType="basin" />
+
     <LinearLayout
+        android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
-        android:id="@+id/top">
+        android:orientation="horizontal">
+
+
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/moon"
-            android:transitionName="logo"/>
+            android:transitionName="logo" />
+
         <TextView
-             android:id="@+id/login_logotext"
+            android:id="@+id/login_logotext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DONOR"
             android:layout_centerInParent="true"
-            android:textSize="35sp"
             android:fontFamily="sans-serif-thin"
+            android:text="DONOR"
             android:textColor="@color/text_color"
+            android:textSize="35sp"
             android:transitionName="logoText" />
 
 
@@ -35,9 +52,8 @@
         android:id="@+id/tree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/background_bottom"
         android:layout_below="@+id/top"
-        />
+        android:src="@drawable/background_bottom" />
 
 
     <LinearLayout
@@ -111,6 +127,7 @@
         </soup.neumorphism.NeumorphCardView>
 
           <soup.neumorphism.NeumorphButton
+              android:id="@+id/login_btn"
               app:neumorph_shadowElevation="6dp"
               android:layout_width="200dp"
               android:layout_height="wrap_content"
@@ -119,7 +136,7 @@
               android:textColor="@color/text_color"
               android:textSize="16sp"
               android:layout_gravity="center"
-              android:layout_marginTop="20dp"/>
+              android:layout_marginTop="20dp" />
         <TextView
             android:id="@+id/newuser_text"
             android:layout_width="wrap_content"

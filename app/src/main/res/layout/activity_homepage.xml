@@ -13,22 +13,23 @@
     android:src="@drawable/moon"
         android:layout_centerInParent="true"
         android:transitionName="logo"/>
+
     <TextView
         android:id="@+id/logo_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DONOR"
-        android:layout_centerInParent="true"
         android:layout_below="@+id/logo"
-        android:textSize="50sp"
+        android:layout_centerInParent="true"
         android:fontFamily="sans-serif-light"
+        android:text="DONOR"
         android:textColor="@color/text_color"
-        android:transitionName="logoText"/>
+        android:textSize="50sp"
+        android:transitionName="logoText" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/background_bottom"
         android:layout_alignParentBottom="true"
-        />
+        android:src="@drawable/background_bottom" />
 
 </RelativeLayout>
