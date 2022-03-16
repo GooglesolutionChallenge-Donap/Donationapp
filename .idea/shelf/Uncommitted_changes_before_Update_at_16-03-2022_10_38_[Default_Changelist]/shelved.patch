@@ -1,0 +1,1737 @@
+Index: app/src/main/res/layout/activity_homepage.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/light_bg\"\r\n    tools:context=\".homepage\">\r\n    <ImageView\r\n        android:id=\"@+id/logo\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n    android:src=\"@drawable/moon\"\r\n        android:layout_centerInParent=\"true\"\r\n        android:transitionName=\"logo\"/>\r\n    <TextView\r\n        android:id=\"@+id/logo_text\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"DONOR\"\r\n        android:layout_centerInParent=\"true\"\r\n        android:layout_below=\"@+id/logo\"\r\n        android:textSize=\"50sp\"\r\n        android:fontFamily=\"sans-serif-light\"\r\n        android:textColor=\"@color/text_color\"\r\n        android:transitionName=\"logoText\"/>\r\n    <ImageView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:src=\"@drawable/background_bottom\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_homepage.xml b/app/src/main/res/layout/activity_homepage.xml
+--- a/app/src/main/res/layout/activity_homepage.xml	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/res/layout/activity_homepage.xml	(date 1646061454364)
+@@ -13,22 +13,23 @@
+     android:src="@drawable/moon"
+         android:layout_centerInParent="true"
+         android:transitionName="logo"/>
++
+     <TextView
+         android:id="@+id/logo_text"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="DONOR"
+-        android:layout_centerInParent="true"
+         android:layout_below="@+id/logo"
+-        android:textSize="50sp"
++        android:layout_centerInParent="true"
+         android:fontFamily="sans-serif-light"
++        android:text="DONOR"
+         android:textColor="@color/text_color"
+-        android:transitionName="logoText"/>
++        android:textSize="50sp"
++        android:transitionName="logoText" />
++
+     <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:src="@drawable/background_bottom"
+         android:layout_alignParentBottom="true"
+-        />
++        android:src="@drawable/background_bottom" />
+ 
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/donationapp/homepage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.donationapp;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.app.ActivityOptions;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.os.Handler;\r\nimport android.util.Pair;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\npublic class homepage extends AppCompatActivity {\r\nprivate TextView logotext;\r\nprivate ImageView logo;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_homepage);\r\n        logotext=(TextView)findViewById(R.id.logo_text);\r\n        logo=(ImageView) findViewById(R.id.logo);\r\n        new Handler().postDelayed(new Runnable() {\r\n            @Override\r\n            public void run() {\r\n            Intent i = new Intent( homepage.this,login.class);\r\n                ActivityOptions option=ActivityOptions.makeSceneTransitionAnimation(homepage.this,\r\n                        Pair.create(logo,\"logo\"),\r\n                Pair.create(logotext, \"logoText\"));\r\n                startActivity(i,option.toBundle());\r\n            }\r\n        },3000);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/homepage.java b/app/src/main/java/com/example/donationapp/homepage.java
+--- a/app/src/main/java/com/example/donationapp/homepage.java	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/java/com/example/donationapp/homepage.java	(date 1646129834092)
+@@ -17,8 +17,18 @@
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_homepage);
++
++        //changing statusbar color
++        statusbar.blackiconstatusbar(homepage.this,R.color.light_bg);
++
++
++        //assigning variables id
++
+         logotext=(TextView)findViewById(R.id.logo_text);
+         logo=(ImageView) findViewById(R.id.logo);
++
++        //adding splashscreen animation
++
+         new Handler().postDelayed(new Runnable() {
+             @Override
+             public void run() {
+Index: app/src/main/res/values/font_certs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/font_certs.xml b/app/src/main/res/values/font_certs.xml
+new file mode 100644
+--- /dev/null	(date 1646992752541)
++++ b/app/src/main/res/values/font_certs.xml	(date 1646992752541)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <array name="com_google_android_gms_fonts_certs">
++        <item>@array/com_google_android_gms_fonts_certs_dev</item>
++        <item>@array/com_google_android_gms_fonts_certs_prod</item>
++    </array>
++    <string-array name="com_google_android_gms_fonts_certs_dev">
++        <item>
++            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
++        </item>
++    </string-array>
++    <string-array name="com_google_android_gms_fonts_certs_prod">
++        <item>
++            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBAKtWLgDYO6IIrgqWbxJOKdoR8qtW0I9Y4sypEwPpt1TTcvZApxsdyxMJZ2JORland2qSGT2y5b+3JKkedxiLDmpHpDsz2WCbdxgxRczfey5YZnTJ4VZbH0xqWVW/8lGmPav5xVwnIiJS6HXk+BVKZF+JcWjAsb/GEuq/eFdpuzSqeYTcfi6idkyugwfYwXFU1+5fZKUaRKYCwkkFQVfcAs1fXA5V+++FGfvjJ/CxURaSxaBvGdGDhfXE28LWuT9ozCl5xw4Yq5OGazvV24mZVSoOO0yZ31j7kYvtwYK6NeADwbSxDdJEqO4k//0zOHKrUiGYXtqw/A0LFFtqoZKFjnkCAQOjgdkwgdYwHQYDVR0OBBYEFMd9jMIhF1Ylmn/Tgt9r45jk14alMIGmBgNVHSMEgZ4wgZuAFMd9jMIhF1Ylmn/Tgt9r45jk14aloXikdjB0MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIEluYy4xEDAOBgNVBAsTB0FuZHJvaWQxEDAOBgNVBAMTB0FuZHJvaWSCCQDC4IdGZEowjTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBAUAA4IBAQBt0lLO74UwLDYKqs6Tm8/yzKkEu116FmH4rkaymUIE0P9KaMftGlMexFlaYjzmB2OxZyl6euNXEsQH8gjwyxCUKRJNexBiGcCEyj6z+a1fuHHvkiaai+KL8W1EyNmgjmyy8AW7P+LLlkR+ho5zEHatRbM/YAnqGcFh5iZBqpknHf1SKMXFh4dd239FJ1jWYfbMDMy3NS5CTMQ2XFI1MvcyUTdZPErjQfTbQe3aDQsQcafEQPD+nqActifKZ0Np0IS9L9kR/wbNvyz6ENwPiTrjV2KRkEjH78ZMcUQXg0L3BYHJ3lc69Vs5Ddf9uUGGMYldX3WfMBEmh/9iFBDAaTCK
++        </item>
++    </string-array>
++</resources>
+Index: app/src/main/res/layout/activity_donersignup.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_donersignup.xml b/app/src/main/res/layout/activity_donersignup.xml
+new file mode 100644
+--- /dev/null	(date 1646904064284)
++++ b/app/src/main/res/layout/activity_donersignup.xml	(date 1646904064284)
+@@ -0,0 +1,305 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".donersignup"
++    android:background="#ecf0f3"
++    android:padding="10dp">
++
++    <ScrollView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical">
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="15dp"
++                android:layout_marginTop="20dp"
++                android:layout_marginRight="0dp"
++                android:fontFamily="@font/abril_fatface"
++                android:text="New User ?"
++                android:textColor="#193566"
++                android:textSize="35sp"
++                android:textStyle="normal" />
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="15dp"
++                android:layout_marginTop="14dp"
++                android:fontFamily="@font/actor"
++                android:text="Create Your Profile..."
++                android:textColor="#193566"
++                android:textSize="18sp" />
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="80dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="40dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_name"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Name"
++                    android:inputType="textPersonName"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/donersignup_name_img"
++                    android:drawablePadding="10dp"
++                    android:drawableTint="#7B8291"/>
++
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="80dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="5dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_email"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="E-Mail"
++                    android:inputType="textEmailAddress"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/donersignup_mail_img"
++                    android:drawablePadding="10dp"
++                    android:drawableTint="#7B8291"/>
++
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="80dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="5dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/usersignup_phone"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Phone Number"
++                    android:inputType="phone"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/donersignup_phone_img"
++                    android:drawablePadding="10dp"
++                    android:drawableTint="#7B8291"/>
++
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="80dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="5dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_password"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Create Password"
++                    android:inputType="textVisiblePassword"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/donersignup_passlock_img"
++                    android:drawableRight="@drawable/donersignup_passeye_img"
++                    android:drawablePadding="10dp"
++                    android:drawableTint="#7B8291"/>
++
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="80dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="5dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/usersignup_confirmpass"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Confirm Password"
++                    android:inputType="textVisiblePassword"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/donersignup_confirmpass_img"
++                    android:drawablePadding="10dp"
++                    android:drawableTint="#7B8291"/>
++
++            </soup.neumorphism.NeumorphCardView>
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="30dp"
++                android:layout_marginTop="25dp"
++                android:text="Address"
++                android:textColor="#193566"
++                android:textSize="18sp" />
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_city"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="City"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_city_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_street"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Street Address"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_streetaddress_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_pin"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Pin Code"
++                    android:inputType="number"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_pincode_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_state"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="State"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_state_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/donersignup_country"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Country"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_country_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++
++            <soup.neumorphism.NeumorphButton
++                style="@style/Widget.Neumorph.Button"
++                android:layout_width="200dp"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:layout_marginTop="30dp"
++                android:clickable="true"
++                android:text="SIGN UP"
++                android:textColor="#ecf0f3"
++                app:neumorph_backgroundColor="#193566" />
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:layout_marginLeft="80dp"
++                android:layout_marginBottom="10dp"
++                android:text="Have an Account? Log In"
++                android:textColor="#193566" />
++
++
++        </LinearLayout>
++
++    </ScrollView>
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/donationapp/donersignup.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/donersignup.java b/app/src/main/java/com/example/donationapp/donersignup.java
+new file mode 100644
+--- /dev/null	(date 1646903776917)
++++ b/app/src/main/java/com/example/donationapp/donersignup.java	(date 1646903776917)
+@@ -0,0 +1,14 @@
++package com.example.donationapp;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++public class donersignup extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_donersignup);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.donationapp\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.Donationapp\">\r\n        <activity\r\n            android:name=\".categorypage\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".homepage\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity\r\n            android:name=\".login\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/AndroidManifest.xml	(date 1647013764289)
+@@ -10,6 +10,18 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.Donationapp">
+         <activity
++            android:name=".receiversignup1"
++            android:exported="true"
++            android:theme="@style/Theme.Donationapp.NoActionBar">
++
++        </activity>
++        <activity
++            android:name=".donersignup"
++            android:exported="false" />
++        <activity
++            android:name=".donorhomepage"
++            android:exported="false" />
++        <activity
+             android:name=".categorypage"
+             android:exported="false" />
+         <activity
+@@ -26,13 +38,12 @@
+             android:exported="false" />
+         <activity
+             android:name=".MainActivity"
+-            android:exported="true">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
++            android:exported="false">
+         </activity>
++
++        <meta-data
++            android:name="preloaded_fonts"
++            android:resource="@array/preloaded_fonts" />
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n}\r\n\r\nandroid {\r\n    compileSdk 32\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.donationapp\"\r\n        minSdk 21\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n        multiDexEnabled true\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.appcompat:appcompat:1.4.1'\r\n    implementation 'com.google.android.material:material:1.5.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n        implementation 'com.github.fornewid:neumorphism:0.2.1'\r\n    implementation \"androidx.multidex:multidex:2.0.1\"\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/build.gradle	(date 1647102200105)
+@@ -25,6 +25,9 @@
+         sourceCompatibility JavaVersion.VERSION_1_8
+         targetCompatibility JavaVersion.VERSION_1_8
+     }
++    buildFeatures {
++        viewBinding true
++    }
+ }
+ 
+ dependencies {
+@@ -37,5 +40,6 @@
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+         implementation 'com.github.fornewid:neumorphism:0.2.1'
+     implementation "androidx.multidex:multidex:2.0.1"
++    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+ 
+ }
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/cursor.xml\" value=\"0.105\" />\r\n        <entry key=\"..\\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/loginpwdImg.xml\" value=\"0.1295\" />\r\n        <entry key=\"..\\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/loginuser_img.xml\" value=\"0.116\" />\r\n        <entry key=\"..\\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/no_background.xml\" value=\"0.105\" />\r\n        <entry key=\"..\\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_categorypage.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_homepage.xml\" value=\"0.16666666666666666\" />\r\n        <entry key=\"..\\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_login.xml\" value=\"0.22\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/.idea/misc.xml	(date 1647104346278)
+@@ -3,13 +3,26 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.181" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/animate_scale.xml" value="0.1" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/circle.xml" value="0.15" />
+         <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/cursor.xml" value="0.105" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/donersignup_phone_img.xml" value="0.155" />
+         <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/loginpwdImg.xml" value="0.1295" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/loginpwd_img.xml" value="0.181" />
+         <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/loginuser_img.xml" value="0.116" />
+         <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/no_background.xml" value="0.105" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/drawable/style_nospace.xml" value="0.15" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/font/abril_fatface.xml" value="0.16577777777777777" />
+         <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_categorypage.xml" value="0.22" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_donersignup.xml" value="0.1554054054054054" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_donorhomepage.xml" value="0.22" />
+         <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_homepage.xml" value="0.16666666666666666" />
+-        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_login.xml" value="0.22" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/activity_receiversignup1.xml" value="0.22" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/receiversignup1_orgcategorylist.xml" value="0.1554054054054054" />
++        <entry key="..\:/Users/HP/AndroidStudioProjects/Donationapp/app/src/main/res/layout/slider_item.xml" value="0.1796875" />
+       </map>
+     </option>
+   </component>
+Index: app/src/main/res/layout/slider_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/slider_item.xml b/app/src/main/res/layout/slider_item.xml
+new file mode 100644
+--- /dev/null	(date 1647350047829)
++++ b/app/src/main/res/layout/slider_item.xml	(date 1647350047829)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++<!--    <ImageView-->
++<!--        android:id="@+id/image_view"-->
++<!--        android:layout_width="match_parent"-->
++<!--        android:layout_height="match_parent"-->
++<!--        android:scaleType="centerCrop"-->
++<!--        android:adjustViewBounds="true">-->
++
++<!--    </ImageView>-->
++
++    <ImageView
++        android:id="@+id/image_view"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:scaleType="fitXY">
++
++    </ImageView>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/drawable/animate_scale.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/animate_scale.xml b/app/src/main/res/drawable/animate_scale.xml
+new file mode 100644
+--- /dev/null	(date 1646130943350)
++++ b/app/src/main/res/drawable/animate_scale.xml	(date 1646130943350)
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="utf-8"?>
++<selector xmlns:android="http://schemas.android.com/apk/res/android">
++    <!-- the pressed state; increase x and y size to 150% -->
++    <item android:state_pressed="true">
++        <set>
++            <objectAnimator android:propertyName="scaleX"
++                android:duration="@android:integer/config_shortAnimTime"
++                android:valueTo="1.1"
++                android:valueType="floatType"/>
++            <objectAnimator android:propertyName="scaleY"
++                android:duration="@android:integer/config_shortAnimTime"
++                android:valueTo="-1.5"
++                android:valueType="floatType"/>
++        </set>
++    </item>
++    <!-- the default, non-pressed state; set x and y size to 100% -->
++    <item android:state_pressed="false">
++        <set>
++            <objectAnimator android:propertyName="scaleX"
++                android:duration="@android:integer/config_shortAnimTime"
++                android:valueTo="1"
++                android:valueType="floatType"/>
++            <objectAnimator android:propertyName="scaleY"
++                android:duration="@android:integer/config_shortAnimTime"
++                android:valueTo="1"
++                android:valueType="floatType"/>
++        </set>
++    </item>
++</selector>
+\ No newline at end of file
+Index: app/src/main/java/com/example/donationapp/categorypage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.donationapp;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.cardview.widget.CardView;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class categorypage extends AppCompatActivity implements View.OnClickListener {\r\nCardView charitycard,animalcard;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_categorypage);\r\n        charitycard=findViewById(R.id.charity_card);\r\n        animalcard=findViewById(R.id.animalrescue_card);\r\n        charitycard.setOnClickListener(this);\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    public void onClick(View v) {\r\n        Intent i;\r\n        switch(v.getId()){\r\n            case R.id.charity_card:\r\n                i=new Intent(this,login.class);\r\n                startActivity(i);\r\n                break;\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/categorypage.java b/app/src/main/java/com/example/donationapp/categorypage.java
+--- a/app/src/main/java/com/example/donationapp/categorypage.java	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/java/com/example/donationapp/categorypage.java	(date 1646136821788)
+@@ -7,16 +7,21 @@
+ import android.os.Bundle;
+ import android.view.View;
+ 
++import soup.neumorphism.NeumorphCardView;
++
+ public class categorypage extends AppCompatActivity implements View.OnClickListener {
+-CardView charitycard,animalcard;
++NeumorphCardView charitycard,animalcard;
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_categorypage);
+-        charitycard=findViewById(R.id.charity_card);
+-        animalcard=findViewById(R.id.animalrescue_card);
++
++        charitycard=(NeumorphCardView) findViewById(R.id.charity_card);
+         charitycard.setOnClickListener(this);
+ 
++        animalcard=(NeumorphCardView) findViewById(R.id.animalrescue_card);
++
++
+ 
+     }
+ 
+Index: app/src/main/res/layout/activity_categorypage.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/light_bg\"\r\n    tools:context=\".categorypage\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <soup.neumorphism.NeumorphTextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Choose your category ...\"\r\n        android:textColor=\"@color/text_color\"\r\n        android:fontFamily=\"serif-monospace\"\r\n        android:textStyle=\"bold\"\r\n        android:textSize=\"20sp\"\r\n        android:textAlignment=\"center\"\r\n        android:layout_marginTop=\"60dp\"/>\r\n\r\n   <soup.neumorphism.NeumorphCardView\r\n       app:neumorph_shapeType=\"flat\"\r\n\r\n       app:neumorph_shadowColorDark=\"#FEC8D8\"\r\n\r\n       android:id=\"@+id/charity_card\"\r\n       android:layout_width=\"300dp\"\r\n       android:layout_height=\"200dp\"\r\n\r\n       android:clickable=\"true\"\r\n       android:layout_gravity=\"center_horizontal\"\r\n       android:layout_marginTop=\"30dp\">\r\n\r\n       <RelativeLayout\r\n\r\n           android:layout_width=\"match_parent\"\r\n           android:layout_height=\"match_parent\">\r\n\r\n           <ImageView\r\n               android:id=\"@+id/charity_icon\"\r\n               android:layout_width=\"104dp\"\r\n               android:layout_height=\"84dp\"\r\n               android:layout_alignParentTop=\"true\"\r\n               android:layout_centerInParent=\"true\"\r\n               android:layout_marginTop=\"20dp\"\r\n               android:src=\"@drawable/charity_icon\"\r\n               app:tint=\"#D291BC\" />\r\n\r\n           <TextView\r\n               android:layout_width=\"match_parent\"\r\n               android:layout_height=\"wrap_content\"\r\n               android:layout_below=\"@+id/charity_icon\"\r\n               android:layout_marginTop=\"20dp\"\r\n               android:fontFamily=\"sans-serif-black\"\r\n               android:text=\"CHARITY\"\r\n               android:textAlignment=\"center\"\r\n               android:textColor=\"@color/text_color\"\r\n               android:textSize=\"26sp\" />\r\n\r\n       </RelativeLayout>\r\n   </soup.neumorphism.NeumorphCardView>\r\n\r\n\r\n\r\n\r\n    <soup.neumorphism.NeumorphCardView\r\n        android:id=\"@+id/animalrescue_card\"\r\n        android:layout_width=\"300dp\"\r\n        android:layout_height=\"200dp\"\r\n        app:neumorph_shapeType=\"flat\"\r\n        app:neumorph_shadowColorDark=\"#E0BBE4\"\r\n        android:clickable=\"true\"\r\n        android:layout_gravity=\"center_horizontal\"\r\n        android:layout_marginTop=\"30dp\">\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/animal_icon\"\r\n                android:layout_width=\"104dp\"\r\n                android:layout_height=\"84dp\"\r\n                android:layout_alignParentTop=\"true\"\r\n                android:layout_centerInParent=\"true\"\r\n                android:layout_marginTop=\"20dp\"\r\n                android:src=\"@drawable/category_animalrescue\"\r\n                app:tint=\"#957DAD\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_below=\"@+id/animal_icon\"\r\n                android:layout_marginTop=\"20dp\"\r\n                android:fontFamily=\"sans-serif-black\"\r\n                android:text=\"ANIMAL RESCUE\"\r\n                android:textAlignment=\"center\"\r\n                android:textColor=\"@color/text_color\"\r\n                android:textSize=\"26sp\" />\r\n\r\n        </RelativeLayout>\r\n    </soup.neumorphism.NeumorphCardView>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_categorypage.xml b/app/src/main/res/layout/activity_categorypage.xml
+--- a/app/src/main/res/layout/activity_categorypage.xml	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/res/layout/activity_categorypage.xml	(date 1645949806202)
+@@ -19,6 +19,8 @@
+         android:textAlignment="center"
+         android:layout_marginTop="60dp"/>
+ 
++
++
+    <soup.neumorphism.NeumorphCardView
+        app:neumorph_shapeType="flat"
+ 
+@@ -78,6 +80,7 @@
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+ 
++
+             <ImageView
+                 android:id="@+id/animal_icon"
+                 android:layout_width="104dp"
+Index: app/src/main/java/com/example/donationapp/sliderAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/sliderAdapter.java b/app/src/main/java/com/example/donationapp/sliderAdapter.java
+new file mode 100644
+--- /dev/null	(date 1647349417402)
++++ b/app/src/main/java/com/example/donationapp/sliderAdapter.java	(date 1647349417402)
+@@ -0,0 +1,83 @@
++//package com.example.donationapp;
++//
++//import android.view.ViewGroup;
++//import android.widget.ImageView;
++//
++//import com.smarteist.autoimageslider.SliderViewAdapter;
++//
++//public class sliderAdapter extends SliderViewAdapter<SliderAdapter.Holder> {
++//
++//    @Override
++//    public SliderAdapter.Holder onCreateViewHolder(ViewGroup parent) {
++//        return null;
++//    }
++//
++//    @Override
++//    public void onBindViewHolder(SliderAdapter.Holder viewHolder, int position) {
++//
++//    }
++//
++//    @Override
++//    public int getCount() {
++//        return 0;
++//    }
++//
++//    public class Holder extends SliderViewAdapter.ViewHolder{
++//          ImageView imgview;
++//
++//
++//    }
++//}
++
++
++
++
++package com.example.donationapp;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.ImageView;
++
++import com.smarteist.autoimageslider.SliderViewAdapter;
++
++public class sliderAdapter extends SliderViewAdapter<sliderAdapter.SliderViewHolder> {
++
++
++    private int[] images;
++
++    public sliderAdapter(int[] images) {
++        this.images = images;
++    }
++
++
++    @Override
++    public SliderViewHolder onCreateViewHolder(ViewGroup parent) {
++
++        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.slider_item,null);
++        return new SliderViewHolder(view);
++    }
++
++    @Override
++    public void onBindViewHolder(SliderViewHolder viewHolder, int position) {
++
++        viewHolder.imageView.setImageResource(images[position]);
++
++    }
++
++    @Override
++    public int getCount() {
++        return images.length;
++    }
++
++    public class SliderViewHolder extends SliderViewAdapter.ViewHolder{
++
++        private ImageView imageView;
++
++        public SliderViewHolder(View itemView) {
++            super(itemView);
++            imageView = itemView.findViewById(R.id.image_view);
++        }
++    }
++}
++
+Index: app/src/main/res/layout/activity_donorhomepage.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_donorhomepage.xml b/app/src/main/res/layout/activity_donorhomepage.xml
+new file mode 100644
+--- /dev/null	(date 1647349817562)
++++ b/app/src/main/res/layout/activity_donorhomepage.xml	(date 1647349817562)
+@@ -0,0 +1,122 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".donorhomepage"
++    android:background="@color/light_bg">
++
++    <soup.neumorphism.NeumorphFloatingActionButton
++        android:id="@+id/donor_profile"
++        android:layout_width="65dp"
++        android:layout_height="65dp"
++        android:layout_alignParentEnd="true"
++        android:layout_marginTop="25dp"
++        android:layout_marginEnd="25dp"
++        android:paddingLeft="5dp"
++        android:paddingTop="20dp"
++        android:paddingRight="5dp"
++        android:paddingBottom="20dp"
++        android:src="@drawable/bell_img"
++        android:tint="#F46D74"
++        app:neumorph_shapeType="flat" />
++
++
++    <soup.neumorphism.NeumorphTextView
++        android:layout_width="wrap_content"
++        android:layout_height="45dp"
++        android:layout_marginStart="25dp"
++        android:layout_marginTop="40dp"
++        android:fontFamily="@font/aclonica"
++        android:text="Hey ! welcome back "
++        android:textAlignment="center"
++        android:textColor="#957DAD"
++        android:textSize="20sp" />
++
++    <soup.neumorphism.NeumorphCardView
++        android:id="@+id/imgslider"
++        android:layout_width="match_parent"
++        android:layout_height="250dp"
++        android:layout_below="@+id/donor_profile"
++        app:neumorph_shapeType="pressed">
++
++
++    </soup.neumorphism.NeumorphCardView>
++
++    <com.smarteist.autoimageslider.SliderView
++        android:layout_below="@+id/imgslider"
++        android:id="@+id/donorhomepage_slider"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        app:sliderAnimationDuration="600"
++        app:sliderAutoCycleDirection="back_and_forth"
++        app:sliderAutoCycleEnabled="true"
++        app:sliderIndicatorAnimationDuration="600"
++        app:sliderIndicatorGravity="center_horizontal"
++        app:sliderIndicatorMargin="15dp"
++        app:sliderIndicatorOrientation="horizontal"
++        app:sliderIndicatorPadding="3dp"
++        app:sliderIndicatorRadius="2dp"
++        app:sliderIndicatorSelectedColor="@color/black"
++        app:sliderIndicatorUnselectedColor="@color/purple_200"
++        app:sliderScrollTimeInSec="2"
++        app:sliderStartAutoCycle="true"
++
++        >
++
++    </com.smarteist.autoimageslider.SliderView>
++
++
++
++        <RelativeLayout
++            android:id="@+id/bottom_menulayout"
++            android:layout_width="match_parent"
++            android:layout_height="100dp"
++            android:layout_alignParentBottom="true"
++            android:paddingTop="2dp">
++
++
++            <soup.neumorphism.NeumorphImageButton
++                android:id="@+id/home_btn"
++                style="@style/Widget.Neumorph.ImageButton"
++                android:layout_width="85dp"
++                android:layout_height="85dp"
++                android:layout_alignParentStart="true"
++                android:layout_marginStart="25dp"
++                android:paddingStart="35dp"
++                android:paddingEnd="35dp"
++                android:src="@drawable/home_icon"
++                android:tint="#655D8A"
++                app:neumorph_shapeType="basin" />
++
++            <soup.neumorphism.NeumorphImageButton
++                android:id="@+id/lib_btn"
++                style="@style/Widget.Neumorph.ImageButton"
++                android:layout_width="85dp"
++                android:layout_height="85dp"
++                android:layout_centerHorizontal="true"
++                android:paddingStart="1dp"
++                android:paddingEnd="1dp"
++                android:src="@drawable/loginuser_img"
++                android:tint="#F10086"
++                app:neumorph_shapeType="flat" />
++
++            <soup.neumorphism.NeumorphImageButton
++                android:id="@+id/notification_btn"
++                style="@style/Widget.Neumorph.ImageButton"
++                android:layout_width="85dp"
++                android:layout_height="85dp"
++                android:layout_alignParentEnd="true"
++                android:layout_marginEnd="25dp"
++                android:src="@drawable/history_img"
++                android:tint="#086E7D"
++                app:neumorph_shapeType="flat" />
++
++
++        </RelativeLayout>
++
++<!--    </soup.neumorphism.NeumorphCardView>-->
++
++
++</RelativeLayout>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1645949343304)
++++ b/.idea/vcs.xml	(date 1645949343304)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/donationapp/donorhomepage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/donorhomepage.java b/app/src/main/java/com/example/donationapp/donorhomepage.java
+new file mode 100644
+--- /dev/null	(date 1647349726736)
++++ b/app/src/main/java/com/example/donationapp/donorhomepage.java	(date 1647349726736)
+@@ -0,0 +1,38 @@
++package com.example.donationapp;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
++import com.smarteist.autoimageslider.SliderAnimations;
++import com.smarteist.autoimageslider.SliderView;
++
++public class donorhomepage extends AppCompatActivity {
++SliderView slider;
++int[] images ={
++        R.drawable.pic2,
++        R.drawable.pic04,
++        R.drawable.pic6,
++        R.drawable.pic8
++};
++    private sliderAdapter adapter;
++    private SliderView sliderView;
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_donorhomepage);
++
++        //changing statusbar color
++        statusbar.blackiconstatusbar(donorhomepage.this,R.color.light_bg);
++
++        //image slider
++
++        slider=findViewById(R.id.donorhomepage_slider);
++        adapter = new sliderAdapter(images);
++        sliderView.setSliderAdapter(adapter);
++        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
++        sliderView.setIndicatorAnimation(IndicatorAnimationType.DROP);
++        sliderView.startAutoCycle();
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/donationapp/statusbar.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/statusbar.java b/app/src/main/java/com/example/donationapp/statusbar.java
+new file mode 100644
+--- /dev/null	(date 1646128744508)
++++ b/app/src/main/java/com/example/donationapp/statusbar.java	(date 1646128744508)
+@@ -0,0 +1,18 @@
++package com.example.donationapp;
++
++import android.app.Activity;
++import android.view.View;
++import android.view.WindowManager;
++
++import androidx.core.content.ContextCompat;
++
++public class statusbar {
++    public static  void blackiconstatusbar(Activity activity, int color){
++
++        activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
++        activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
++        activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
++        activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
++        activity.getWindow().setStatusBarColor(ContextCompat.getColor(activity,color));
++    }
++}
+Index: app/src/main/res/values/preloaded_fonts.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/preloaded_fonts.xml b/app/src/main/res/values/preloaded_fonts.xml
+new file mode 100644
+--- /dev/null	(date 1646908264705)
++++ b/app/src/main/res/values/preloaded_fonts.xml	(date 1646908264705)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <array name="preloaded_fonts" translatable="false">
++        <item>@font/abril_fatface</item>
++        <item>@font/actor</item>
++    </array>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Theme.Donationapp\" parent=\"Theme.AppCompat.Light.NoActionBar\">\r\n        <!-- Primary brand color. -->\r\n<!--        <item name=\"colorPrimary\">@color/purple_500</item>-->\r\n<!--        <item name=\"colorPrimaryVariant\">@color/purple_700</item>-->\r\n<!--        <item name=\"colorOnPrimary\">@color/white</item>-->\r\n        <!-- Secondary brand color. -->\r\n<!--        <item name=\"colorSecondary\">@color/teal_200</item>-->\r\n<!--        <item name=\"colorSecondaryVariant\">@color/teal_700</item>-->\r\n<!--        <item name=\"colorOnSecondary\">@color/black</item>-->\r\n        <!-- Status bar color. -->\r\n<!--        <item name=\"android:statusBarColor\" tools:targetApi=\"l\">?attr/colorPrimaryVariant</item>-->\r\n        <!-- Customize your theme here. -->\r\n        \r\n        <item name=\"android:windowContentTransitions\">true</item>\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/res/values/themes.xml	(date 1647012924896)
+@@ -1,18 +1,27 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Theme.Donationapp" parent="Theme.AppCompat.Light.NoActionBar">
+-        <!-- Primary brand color. -->
+-<!--        <item name="colorPrimary">@color/purple_500</item>-->
+-<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+-<!--        <item name="colorOnPrimary">@color/white</item>-->
+-        <!-- Secondary brand color. -->
+-<!--        <item name="colorSecondary">@color/teal_200</item>-->
+-<!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
+-<!--        <item name="colorOnSecondary">@color/black</item>-->
+-        <!-- Status bar color. -->
+-<!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+-        <!-- Customize your theme here. -->
+-        
++    <style name="Theme.Donationapp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
++<!--         Primary brand color. -->
++                <item name="colorPrimary">@color/purple_500</item>
++                <item name="colorPrimaryVariant">@color/purple_700</item>
++                <item name="colorOnPrimary">@color/white</item>
++<!--         Secondary brand color. -->
++                <item name="colorSecondary">@color/teal_200</item>
++                <item name="colorSecondaryVariant">@color/teal_700</item>
++                <item name="colorOnSecondary">@color/black</item>
++<!--         Status bar color. -->
++                <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
++<!--         Customize your theme here. -->
++
+         <item name="android:windowContentTransitions">true</item>
+     </style>
++
++    <style name="Theme.Donationapp.NoActionBar">
++        <item name="windowActionBar">false</item>
++        <item name="windowNoTitle">true</item>
++    </style>
++
++    <style name="Theme.Donationapp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
++
++    <style name="Theme.Donationapp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/light_bg\"\r\n    tools:context=\".login\">\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\"\r\n        android:gravity=\"center\"\r\n        android:id=\"@+id/top\">\r\n        <ImageView\r\n            android:layout_width=\"100dp\"\r\n            android:layout_height=\"100dp\"\r\n            android:src=\"@drawable/moon\"\r\n            android:transitionName=\"logo\"/>\r\n        <TextView\r\n             android:id=\"@+id/login_logotext\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"DONOR\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textSize=\"35sp\"\r\n            android:fontFamily=\"sans-serif-thin\"\r\n            android:textColor=\"@color/text_color\"\r\n            android:transitionName=\"logoText\" />\r\n\r\n\r\n    </LinearLayout>\r\n\r\n    <ImageView\r\n        android:id=\"@+id/tree\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:src=\"@drawable/background_bottom\"\r\n        android:layout_below=\"@+id/top\"\r\n        />\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_below=\"@+id/tree\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"WELCOME\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginStart=\"30dp\"\r\n            android:textStyle=\"bold\"\r\n            android:textSize=\"40sp\"\r\n            android:textColor=\"@color/text_color\"\r\n           />\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Let's get started\"\r\n            android:layout_marginStart=\"30dp\"\r\n            android:textSize=\"20sp\"\r\n            android:textColor=\"@color/text_color\" />\r\n        <soup.neumorphism.NeumorphCardView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"80dp\"\r\n            app:neumorph_shapeType=\"basin\"\r\n            android:layout_marginStart=\"10dp\"\r\n            android:layout_marginEnd=\"10dp\"\r\n            android:layout_marginTop=\"10dp\">\r\n            <EditText\r\n                android:id=\"@+id/login_email\"\r\n                android:inputType=\"textEmailAddress\"\r\n                android:hint=\"E-mail Id\"\r\n                android:drawableLeft=\"@drawable/loginuser_img\"\r\n                android:drawablePadding=\"20dp\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:textColor=\"@color/text_color\"\r\n                android:background=\"@drawable/no_background\"\r\n                android:textCursorDrawable=\"@drawable/cursor\"\r\n                android:paddingStart=\"10dp\"\r\n                android:layout_marginStart=\"10dp\"\r\n                android:paddingEnd=\"10dp\"/>\r\n\r\n        </soup.neumorphism.NeumorphCardView>\r\n\r\n        <soup.neumorphism.NeumorphCardView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"80dp\"\r\n            app:neumorph_shapeType=\"basin\"\r\n            android:layout_marginStart=\"10dp\"\r\n            android:layout_marginEnd=\"10dp\"\r\n            android:layout_marginTop=\"10dp\">\r\n            <EditText\r\n                android:id=\"@+id/login_pwd\"\r\n                android:inputType=\"textPassword\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:textColor=\"@color/text_color\"\r\n                android:background=\"@drawable/no_background\"\r\n                android:drawableLeft=\"@drawable/loginpwd_img\"\r\n                android:drawablePadding=\"20dp\"\r\n                android:hint=\"Password\"\r\n                android:textCursorDrawable=\"@drawable/cursor\"\r\n                android:paddingStart=\"20dp\"\r\n                android:paddingEnd=\"10dp\"/>\r\n\r\n        </soup.neumorphism.NeumorphCardView>\r\n\r\n          <soup.neumorphism.NeumorphButton\r\n              app:neumorph_shadowElevation=\"6dp\"\r\n              android:layout_width=\"200dp\"\r\n              android:layout_height=\"wrap_content\"\r\n              style=\"@style/Widget.Neumorph.Button\"\r\n              android:text=\"LOGIN\"\r\n              android:textColor=\"@color/text_color\"\r\n              android:textSize=\"16sp\"\r\n              android:layout_gravity=\"center\"\r\n              android:layout_marginTop=\"20dp\"/>\r\n        <TextView\r\n            android:id=\"@+id/newuser_text\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"@string/signup\"\r\n            android:textSize=\"14sp\"\r\n            android:textColor=\"@color/text_color\"\r\n            android:layout_gravity=\"center\"/>\r\n\r\n\r\n\r\n    </LinearLayout>\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1646136079064)
+@@ -6,26 +6,43 @@
+     android:layout_height="match_parent"
+     android:background="@color/light_bg"
+     tools:context=".login">
++
++    <soup.neumorphism.NeumorphImageButton
++        android:id="@+id/login_backbtn"
++        android:layout_width="55dp"
++        android:layout_height="55dp"
++        android:layout_marginStart="10dp"
++        android:layout_marginTop="18dp"
++        android:paddingStart="16dp"
++        android:paddingEnd="16dp"
++
++        android:src="@drawable/back_arrowbtnicon"
++        app:neumorph_shadowElevation="5dp"
++        app:neumorph_shapeType="basin" />
++
+     <LinearLayout
++        android:id="@+id/top"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:orientation="horizontal"
+         android:gravity="center"
+-        android:id="@+id/top">
++        android:orientation="horizontal">
++
++
+         <ImageView
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:src="@drawable/moon"
+-            android:transitionName="logo"/>
++            android:transitionName="logo" />
++
+         <TextView
+-             android:id="@+id/login_logotext"
++            android:id="@+id/login_logotext"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+-            android:text="DONOR"
+             android:layout_centerInParent="true"
+-            android:textSize="35sp"
+             android:fontFamily="sans-serif-thin"
++            android:text="DONOR"
+             android:textColor="@color/text_color"
++            android:textSize="35sp"
+             android:transitionName="logoText" />
+ 
+ 
+@@ -35,9 +52,8 @@
+         android:id="@+id/tree"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:src="@drawable/background_bottom"
+         android:layout_below="@+id/top"
+-        />
++        android:src="@drawable/background_bottom" />
+ 
+ 
+     <LinearLayout
+@@ -111,6 +127,7 @@
+         </soup.neumorphism.NeumorphCardView>
+ 
+           <soup.neumorphism.NeumorphButton
++              android:id="@+id/login_btn"
+               app:neumorph_shadowElevation="6dp"
+               android:layout_width="200dp"
+               android:layout_height="wrap_content"
+@@ -119,7 +136,7 @@
+               android:textColor="@color/text_color"
+               android:textSize="16sp"
+               android:layout_gravity="center"
+-              android:layout_marginTop="20dp"/>
++              android:layout_marginTop="20dp" />
+         <TextView
+             android:id="@+id/newuser_text"
+             android:layout_width="wrap_content"
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Donationapp</string>\r\n    <string name=\"signup\">New user? <b>Sign Up</b></string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/res/values/strings.xml	(date 1646905105367)
+@@ -1,4 +1,13 @@
+ <resources>
+     <string name="app_name">Donationapp</string>
+     <string name="signup">New user? <b>Sign Up</b></string>
++    <string name="title_activity_donor_landingpage">donorLandingpage</string>
++    <!-- Strings used for fragments for navigation -->
++    <string name="first_fragment_label">First Fragment</string>
++    <string name="second_fragment_label">Second Fragment</string>
++    <string name="next">Next</string>
++    <string name="previous">Previous</string>
++
++    <string name="hello_first_fragment">Hello first fragment</string>
++    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/donationapp/login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.donationapp;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.TextView;\r\n\r\npublic class login extends AppCompatActivity implements View.OnClickListener {\r\nTextView signuptext;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n        signuptext=findViewById(R.id.newuser_text);\r\n        signuptext.setOnClickListener(this);\r\n    }\r\n\r\n    @Override\r\n    public void onClick(View view) {\r\n        Intent i= new Intent(login.this,homepage.class);\r\n        startActivity(i);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/login.java b/app/src/main/java/com/example/donationapp/login.java
+--- a/app/src/main/java/com/example/donationapp/login.java	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/app/src/main/java/com/example/donationapp/login.java	(date 1647013506793)
+@@ -5,21 +5,55 @@
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.view.View;
++import android.view.Window;
++import android.view.WindowManager;
++import android.widget.Button;
+ import android.widget.TextView;
+ 
+ public class login extends AppCompatActivity implements View.OnClickListener {
+-TextView signuptext;
++
++    TextView signuptext;
++    Button loginbtn;
++
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
++
++        //removing titlebar form app
++
++        requestWindowFeature(Window.FEATURE_NO_TITLE);
++        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+         setContentView(R.layout.activity_login);
+-        signuptext=findViewById(R.id.newuser_text);
++
++
++        //changing statusbar color
++
++        statusbar.blackiconstatusbar(login.this,R.color.light_bg);
++
++
++        //adding onclicklistener and id to variable
++
++        loginbtn=(Button) findViewById(R.id.login_btn);
++        loginbtn.setOnClickListener(this);
++
++        signuptext=(TextView) findViewById(R.id.newuser_text);
+         signuptext.setOnClickListener(this);
+     }
+ 
+     @Override
+-    public void onClick(View view) {
+-        Intent i= new Intent(login.this,homepage.class);
+-        startActivity(i);
++    public void onClick(View v) {
++        Intent i;
++        switch(v.getId()){
++            case R.id.login_btn: i=new Intent(login.this,donorhomepage.class);
++                startActivity(i);
++            break;
++
++            case R.id.newuser_text: i=new Intent(this,receiversignup1.class);
++            startActivity(i);
++            break;
++        }
++
++
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/donationapp/receiversignup1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/donationapp/receiversignup1.java b/app/src/main/java/com/example/donationapp/receiversignup1.java
+new file mode 100644
+--- /dev/null	(date 1647014504225)
++++ b/app/src/main/java/com/example/donationapp/receiversignup1.java	(date 1647014504225)
+@@ -0,0 +1,95 @@
++//package com.example.donationapp;
++//
++//import androidx.appcompat.app.AppCompatActivity;
++//
++//import android.os.Bundle;
++//import android.widget.ArrayAdapter;
++//import android.widget.AutoCompleteTextView;
++//
++//public class receiversignup1 extends AppCompatActivity {
++//
++//    AutoCompleteTextView autoCompleteTextView;
++//
++//    @Override
++//    protected void onCreate(Bundle savedInstanceState) {
++//        super.onCreate(savedInstanceState);
++//        setContentView(R.layout.activity_receiversignup1);
++//         autoCompleteTextView = findViewById(R.id.receiversignup1_autocompletetxt);
++//
++//        String []option = {"Organisation Category" , "NGO", "Orphanage", "Old-Age Home"};
++//
++//        ArrayAdapter arrayAdapter = new ArrayAdapter(this , R.layout.receiversignup1_orgcategorylist , option);
++//
++//        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString() , false);
++//
++//        autoCompleteTextView.setAdapter(arrayAdapter);
++//    }
++//}
++
++
++
++
++
++
++
++        package com.example.donationapp;
++
++        import androidx.appcompat.app.AppCompatActivity;
++
++        import android.os.Bundle;
++        import android.view.View;
++        import android.widget.AdapterView;
++        import android.widget.ArrayAdapter;
++        import android.widget.AutoCompleteTextView;
++        import android.widget.Toast;
++
++public class receiversignup1 extends AppCompatActivity {
++
++    String[] items =  {"Material","Design","Components","Android","5.0 Lollipop"};
++    AutoCompleteTextView autoCompleteTxt;
++    ArrayAdapter<String> adapterItems;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_receiversignup1);
++
++        //changing statusbar color
++
++        statusbar.blackiconstatusbar(receiversignup1.this,R.color.light_bg);
++
++        autoCompleteTxt = findViewById(R.id.receiversignup1_autocompletetxt);
++
++        adapterItems = new ArrayAdapter<String>(this,R.layout.receiversignup1_orgcategorylist,items);
++        autoCompleteTxt.setAdapter(adapterItems);
++
++        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
++            @Override
++            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
++                String item = parent.getItemAtPosition(position).toString();
++                Toast.makeText(getApplicationContext(),"Item: "+item,Toast.LENGTH_SHORT).show();
++            }
++        });
++    }
++}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+Index: app/src/main/res/drawable/bell_img.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/bell_img.xml b/app/src/main/res/drawable/bell_img.xml
+new file mode 100644
+--- /dev/null	(date 1647063678864)
++++ b/app/src/main/res/drawable/bell_img.xml	(date 1647063678864)
+@@ -0,0 +1,5 @@
++<vector android:alpha="0.89" android:height="24dp"
++    android:tint="#090A0A" android:viewportHeight="24"
++    android:viewportWidth="24" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M7.58,4.08L6.15,2.65C3.75,4.48 2.17,7.3 2.03,10.5h2c0.15,-2.65 1.51,-4.97 3.55,-6.42zM19.97,10.5h2c-0.15,-3.2 -1.73,-6.02 -4.12,-7.85l-1.42,1.43c2.02,1.45 3.39,3.77 3.54,6.42zM18,11c0,-3.07 -1.64,-5.64 -4.5,-6.32L13.5,4c0,-0.83 -0.67,-1.5 -1.5,-1.5s-1.5,0.67 -1.5,1.5v0.68C7.63,5.36 6,7.92 6,11v5l-2,2v1h16v-1l-2,-2v-5zM12,22c0.14,0 0.27,-0.01 0.4,-0.04 0.65,-0.14 1.18,-0.58 1.44,-1.18 0.1,-0.24 0.15,-0.5 0.15,-0.78h-4c0.01,1.1 0.9,2 2.01,2z"/>
++</vector>
+Index: app/src/main/res/layout/receiversignup1_orgcategorylist.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/receiversignup1_orgcategorylist.xml b/app/src/main/res/layout/receiversignup1_orgcategorylist.xml
+new file mode 100644
+--- /dev/null	(date 1646905390843)
++++ b/app/src/main/res/layout/receiversignup1_orgcategorylist.xml	(date 1646905390843)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<TextView xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:ellipsize="end"
++    android:padding="16dp"
++    android:maxLines="1"
++    android:textAppearance="?attr/textAppearanceSubtitle1">
++
++</TextView>
+\ No newline at end of file
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>pluginManagement {\r\n    repositories {\r\n        gradlePluginPortal()\r\n        google()\r\n        mavenCentral()\r\n    }\r\n}\r\ndependencyResolutionManagement {\r\n    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)\r\n    repositories {\r\n        google()\r\n        mavenCentral()\r\n        maven { url 'https://jitpack.io' }\r\n    }\r\n}\r\nrootProject.name = \"Donationapp\"\r\ninclude ':app'\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle b/settings.gradle
+--- a/settings.gradle	(revision e88a3fa85857beea674ce54afd90852edea39534)
++++ b/settings.gradle	(date 1647103700713)
+@@ -11,6 +11,7 @@
+         google()
+         mavenCentral()
+         maven { url 'https://jitpack.io' }
++        jcenter()
+     }
+ }
+ rootProject.name = "Donationapp"
+Index: app/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/styles.xml b/app/src/main/res/values/styles.xml
+new file mode 100644
+--- /dev/null	(date 1646904994704)
++++ b/app/src/main/res/values/styles.xml	(date 1646904994704)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
++
++        <item name="colorPrimary">@color/design_default_color_primary</item>
++        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
++        <item name="colorAccent">@color/design_default_color_primary</item>
++
++    </style>
++
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_receiversignup1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_receiversignup1.xml b/app/src/main/res/layout/activity_receiversignup1.xml
+new file mode 100644
+--- /dev/null	(date 1646996533651)
++++ b/app/src/main/res/layout/activity_receiversignup1.xml	(date 1646996533651)
+@@ -0,0 +1,268 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".receiversignup1"
++    android:background="#ecf0f3"
++    android:padding="10dp"
++    >
++
++    <ScrollView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical">
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="15dp"
++                android:layout_marginTop="20dp"
++                android:fontFamily="@font/abril_fatface"
++                android:text="Get Started !!"
++                android:textColor="#193566"
++                android:textSize="35sp"
++                android:textStyle="normal" />
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="15dp"
++                android:layout_marginTop="14dp"
++                android:fontFamily="@font/actor"
++                android:text="Build Your Organization Profile..."
++                android:textColor="#193566"
++                android:textSize="18sp" />
++
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="80dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="40dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/receiversignup1_orgname"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Organisation Name"
++                    android:inputType="textEmailAddress"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_orgname_img"
++                    android:drawablePadding="10dp"
++                    android:drawableTint="#7B8291"/>
++
++            </soup.neumorphism.NeumorphCardView>
++
++
++            <RelativeLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content">
++
++                <soup.neumorphism.NeumorphCardView
++                    android:layout_width="match_parent"
++                    android:layout_height="80dp"
++                    android:layout_marginStart="10dp"
++                    android:layout_marginTop="7dp"
++                    android:layout_marginEnd="10dp"></soup.neumorphism.NeumorphCardView>
++
++                     <!--              dropdown-->
++
++                <com.google.android.material.textfield.TextInputLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginStart="20dp"
++                    android:layout_marginTop="17dp"
++                    android:layout_marginEnd="20dp"
++                    android:layout_marginBottom="20dp"
++                    app:boxCornerRadiusBottomEnd="20dp"
++                    app:boxCornerRadiusBottomStart="20dp"
++                    app:boxCornerRadiusTopEnd="20dp"
++                    app:boxCornerRadiusTopStart="20dp"
++                    app:boxStrokeColor="#ecf0f3"
++                    app:boxStrokeWidth="0dp"
++                    app:layout_constraintLeft_toLeftOf="parent"
++                    app:layout_constraintRight_toRightOf="parent"
++                    app:layout_constraintTop_toTopOf="parent"
++                    app:startIconDrawable="@drawable/receiversignup1_category_img"
++                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
++
++                    <AutoCompleteTextView
++                        android:id="@+id/receiversignup1_autocompletetxt"
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:layout_weight="1"
++                        android:inputType="none"
++                        android:textSize="17sp"
++                        android:padding="10dp"
++                        android:background="@drawable/no_background"
++                        android:backgroundTint="@color/light_bg"
++                        android:textColor="#7B8291"/>
++
++
++                </com.google.android.material.textfield.TextInputLayout>
++
++            </RelativeLayout>
++
++
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="30dp"
++                android:layout_marginTop="25dp"
++                android:text="Address"
++                android:textColor="#193566"
++                android:textSize="18sp" />
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/receiversignup1_city"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="City"
++                    android:inputType="textEmailAddress"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_city_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/receiversignup1_street"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Street Address"
++                    android:inputType="textEmailAddress"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_streetaddress_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/receiversignup1_pin"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Pin Code"
++                    android:inputType="textEmailAddress"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_pincode_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/receiversignup1_state"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="State"
++                    android:inputType="textEmailAddress"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_state_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++
++            <soup.neumorphism.NeumorphCardView
++                style="@style/Widget.Neumorph.CardView"
++                android:layout_width="match_parent"
++                android:layout_height="70dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginTop="0dp"
++                android:layout_marginEnd="10dp">
++
++                <EditText
++                    android:id="@+id/receiversignup1_name"
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:background="@drawable/no_background"
++                    android:hint="Country"
++                    android:inputType="textEmailAddress"
++                    android:paddingStart="10dp"
++                    android:paddingEnd="10dp"
++                    android:textCursorDrawable="@drawable/cursor"
++                    android:drawableLeft="@drawable/receiversignup1_country_img"
++                    android:drawablePadding="10dp"/>
++            </soup.neumorphism.NeumorphCardView>
++
++
++            <soup.neumorphism.NeumorphButton
++                android:id="@+id/receiversignup1_nextbtn"
++                style="@style/Widget.Neumorph.Button"
++                android:layout_width="200dp"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:layout_marginTop="30dp"
++                android:clickable="true"
++                android:text="NEXT"
++                android:textColor="#ecf0f3"
++                app:neumorph_backgroundColor="#193566" />
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:layout_marginLeft="80dp"
++                android:layout_marginBottom="10dp"
++                android:text="Have an Account? Log In"
++                android:textColor="#193566" />
++
++        </LinearLayout>
++
++
++    </ScrollView>
++
++
++</RelativeLayout>
++
+Index: app/src/main/res/drawable/donersignup_phone_img.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/donersignup_phone_img.xml b/app/src/main/res/drawable/donersignup_phone_img.xml
+new file mode 100644
+--- /dev/null	(date 1646904260858)
++++ b/app/src/main/res/drawable/donersignup_phone_img.xml	(date 1646904260858)
+@@ -0,0 +1,5 @@
++<vector android:height="30dp" android:tint="?attr/colorControlNormal"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="30dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M15.5,1h-8C6.12,1 5,2.12 5,3.5v17C5,21.88 6.12,23 7.5,23h8c1.38,0 2.5,-1.12 2.5,-2.5v-17C18,2.12 16.88,1 15.5,1zM11.5,22c-0.83,0 -1.5,-0.67 -1.5,-1.5s0.67,-1.5 1.5,-1.5 1.5,0.67 1.5,1.5 -0.67,1.5 -1.5,1.5zM16,18L7,18L7,4h9v14z"/>
++</vector>
