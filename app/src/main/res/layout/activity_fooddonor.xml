@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fooddonor"
+    android:background="#ecf0f3"
+    android:padding="10dp"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/abril_fatface"
+                android:text="Donate your Stuffs"
+                android:textColor="#1182A4"
+                android:textSize="35sp"
+                android:textStyle="normal"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/actor"
+                android:text="Where you want to donate?"
+                android:textColor="#00618D"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <soup.neumorphism.NeumorphCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"></soup.neumorphism.NeumorphCardView>
+
+                <!--              dropdown-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#C6B6D6"
+                    android:paddingLeft="5dp"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxStrokeColor="#ecf0f3"
+                    app:boxStrokeWidth="0dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:startIconDrawable="@drawable/foodpagefinder"
+                    app:startIconTint="#9CD8EE"
+
+                    >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/wheretodonate_autocompletetxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/no_background"
+                        android:inputType="none"
+                        android:padding="10dp"
+                        android:textColor="#7B8291"
+                        android:textSize="17sp"
+
+                        />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="25dp"
+                android:text="Information"
+                android:textColor="#1182A4"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
+
+                <EditText
+                    android:id="@+id/receiversignup1_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/receiversignup1_streetaddress_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#B497EF"
+                    android:hint="Pickup Address"
+                    android:inputType="textPostalAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+
+
+                    />
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
+
+                <EditText
+                    android:id="@+id/receiversignup1_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/receiversignup1_pincode_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#C4DBB9"
+                    android:hint="Pin Code"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor" />
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/actor"
+                android:text="Food Type ?"
+                android:textColor="#00618D"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="RAW"
+                    android:textColor="#2FA7B4"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="COOKED"
+                    android:textColor="#2FA7B4">
+
+                </RadioButton>
+            </RadioGroup>
+
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed"
+
+                >
+
+                <EditText
+                    android:id="@+id/receiversignup1_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/foodpicker"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#F6C7C8"
+                    android:hint="What Food is it?"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor" />
+            </soup.neumorphism.NeumorphCardView>
+
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
+
+                <EditText
+                    android:id="@+id/receiversignup1_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/weighticon"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#E6AAE9"
+                    android:hint="Enter Food weight in KG"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor" />
+            </soup.neumorphism.NeumorphCardView>
+
+            <!--Button to open the image selector-->
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/BSelectImage"
+                style="@style/Widget.Neumorph.Button"
+
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:width="20dp"
+                android:text="SELECT IMAGE"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:neumorph_backgroundColor="#A9BCE5" />
+
+            <!--ImageView to preview the selected image-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/actor"
+                android:text="Your Image will appear here"
+                android:textColor="#00618D"
+                android:textSize="12sp" />
+
+            <soup.neumorphism.NeumorphImageView
+                android:id="@+id/IVPreviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/BSelectImage"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                app:neumorph_shapeType="pressed"
+
+                />
+
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/receiversignup1_nextbtn"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:text="DONATE"
+                android:textColor="#ecf0f3"
+                app:neumorph_backgroundColor="#B497EF" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
+

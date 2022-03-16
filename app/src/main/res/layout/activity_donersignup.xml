@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".donersignup"
+    android:background="#ecf0f3"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="0dp"
+                android:fontFamily="@font/abril_fatface"
+                android:text="New User ?"
+                android:textColor="#193566"
+                android:textSize="35sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/actor"
+                android:text="Create Your Profile..."
+                android:textColor="#193566"
+                android:textSize="18sp" />
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/donersignup_name_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="E-Mail"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/donersignup_mail_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/usersignup_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/donersignup_phone_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="Create Password"
+                    android:inputType="textVisiblePassword"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/donersignup_passlock_img"
+                    android:drawableRight="@drawable/donersignup_passeye_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/usersignup_confirmpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="Confirm Password"
+                    android:inputType="textVisiblePassword"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/donersignup_confirmpass_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="25dp"
+                android:text="Address"
+                android:textColor="#193566"
+                android:textSize="18sp" />
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="City"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/receiversignup1_city_img"
+                    android:drawablePadding="10dp"/>
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="Street Address"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/receiversignup1_streetaddress_img"
+                    android:drawablePadding="10dp"/>
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="Pin Code"
+                    android:inputType="number"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/receiversignup1_pincode_img"
+                    android:drawablePadding="10dp"/>
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="State"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/receiversignup1_state_img"
+                    android:drawablePadding="10dp"/>
+            </soup.neumorphism.NeumorphCardView>
+
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp">
+
+                <EditText
+                    android:id="@+id/donersignup_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/no_background"
+                    android:hint="Country"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:drawableLeft="@drawable/receiversignup1_country_img"
+                    android:drawablePadding="10dp"/>
+            </soup.neumorphism.NeumorphCardView>
+
+
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:text="SIGN UP"
+                android:textColor="#ecf0f3"
+                app:neumorph_backgroundColor="#193566" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="80dp"
+                android:layout_marginBottom="10dp"
+                android:text="Have an Account? Log In"
+                android:textColor="#193566" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

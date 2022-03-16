@@ -7,15 +7,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class categorypage extends AppCompatActivity implements View.OnClickListener {
-CardView charitycard,animalcard;
+NeumorphCardView charitycard,animalcard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorypage);
-        charitycard=findViewById(R.id.charity_card);
-        animalcard=findViewById(R.id.animalrescue_card);
+
+        charitycard=(NeumorphCardView) findViewById(R.id.charity_card);
         charitycard.setOnClickListener(this);
+
+        animalcard=(NeumorphCardView) findViewById(R.id.animalrescue_card);
+
 
 
     }

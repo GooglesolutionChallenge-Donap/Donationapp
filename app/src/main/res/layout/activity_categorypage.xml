@@ -19,6 +19,8 @@
         android:textAlignment="center"
         android:layout_marginTop="60dp"/>
 
+
+
    <soup.neumorphism.NeumorphCardView
        app:neumorph_shapeType="flat"
 
@@ -77,6 +79,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
 
             <ImageView
                 android:id="@+id/animal_icon"
