@@ -106,6 +106,7 @@
                         android:textSize="17sp"
                         android:padding="10dp"
                         android:background="@drawable/no_background"
+                        android:backgroundTint="@color/light_bg"
                         android:textColor="#7B8291"/>
 
 

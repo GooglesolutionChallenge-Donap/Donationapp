@@ -49,7 +49,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 startActivity(i);
             break;
 
-            case R.id.newuser_text: i=new Intent(this,categorypage.class);
+            case R.id.newuser_text: i=new Intent(this,receiversignup1.class);
             startActivity(i);
             break;
         }
