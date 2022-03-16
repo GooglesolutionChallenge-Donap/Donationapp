@@ -17,8 +17,18 @@ private ImageView logo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+        //changing statusbar color
+        statusbar.blackiconstatusbar(homepage.this,R.color.light_bg);
+
+
+        //assigning variables id
+
         logotext=(TextView)findViewById(R.id.logo_text);
         logo=(ImageView) findViewById(R.id.logo);
+
+        //adding splashscreen animation
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

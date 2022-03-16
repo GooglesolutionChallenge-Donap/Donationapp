@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".donorhomepage"
+    android:background="@color/light_bg">
+
+    <soup.neumorphism.NeumorphFloatingActionButton
+        android:id="@+id/donor_profile"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="20dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/bell_img"
+        android:tint="#F46D74"
+        app:neumorph_shapeType="flat" />
+
+
+    <soup.neumorphism.NeumorphTextView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Hey ! welcome back "
+        android:textAlignment="center"
+        android:textColor="#957DAD"
+        android:textSize="20sp" />
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/imgslider"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/donor_profile"
+        app:neumorph_shapeType="pressed">
+
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <com.smarteist.autoimageslider.SliderView
+        android:layout_below="@+id/imgslider"
+        android:id="@+id/donorhomepage_slider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="center_horizontal"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="@color/black"
+        app:sliderIndicatorUnselectedColor="@color/purple_200"
+        app:sliderScrollTimeInSec="2"
+        app:sliderStartAutoCycle="true"
+
+        >
+
+    </com.smarteist.autoimageslider.SliderView>
+
+
+
+        <RelativeLayout
+            android:id="@+id/bottom_menulayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:paddingTop="2dp">
+
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/home_btn"
+                style="@style/Widget.Neumorph.ImageButton"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="25dp"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:src="@drawable/home_icon"
+                android:tint="#655D8A"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/lib_btn"
+                style="@style/Widget.Neumorph.ImageButton"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp"
+                android:src="@drawable/loginuser_img"
+                android:tint="#F10086"
+                app:neumorph_shapeType="flat" />
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/notification_btn"
+                style="@style/Widget.Neumorph.ImageButton"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:src="@drawable/history_img"
+                android:tint="#086E7D"
+                app:neumorph_shapeType="flat" />
+
+
+        </RelativeLayout>
+
+<!--    </soup.neumorphism.NeumorphCardView>-->
+
+
+</RelativeLayout>
