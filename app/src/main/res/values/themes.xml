@@ -24,4 +24,14 @@
     <style name="Theme.Donationapp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Donationapp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    //siup as user reciver animation
+
+    <style name="SignUpAsAnimaton">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out</item>
+    </style>
+
+
+
 </resources>
