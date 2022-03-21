@@ -1,19 +1,27 @@
 package com.example.donationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import soup.neumorphism.NeumorphCardView;
 
 public class login extends AppCompatActivity implements View.OnClickListener {
 
     TextView signuptext;
     Button loginbtn;
+    Dialog dialog;
 
 
     @Override
@@ -34,11 +42,20 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
         //adding onclicklistener and id to variable
 
+
+//        login btn
+
         loginbtn=(Button) findViewById(R.id.login_btn);
         loginbtn.setOnClickListener(this);
 
+        //sigup btn
+
         signuptext=(TextView) findViewById(R.id.newuser_text);
         signuptext.setOnClickListener(this);
+
+        // sigup as donor receiver card diaolg
+
+        dialog = new Dialog(this);
     }
 
     @Override
@@ -49,10 +66,63 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 startActivity(i);
             break;
 
-            case R.id.newuser_text: i=new Intent(this,receiversignup1.class);
-            startActivity(i);
+            case R.id.newuser_text:
+                openSignUpToast();
             break;
+            default:
+                Toast.makeText(this, "wrong option", Toast.LENGTH_SHORT).show();
         }
+
+
+    }
+
+
+
+    // Function of dialogue sigup as donor or receiver
+
+
+    private void openSignUpToast() {
+
+
+        dialog.setContentView(R.layout.signup_as_toast);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        dialog.getWindow().setWindowAnimations(R.style.SignUpAsAnimaton);
+
+        NeumorphCardView cardDonor = dialog.findViewById(R.id.signup_donor);
+        NeumorphCardView cardReceiver = dialog.findViewById(R.id.signup_receiver);
+
+        ImageView imageViewClose = dialog.findViewById(R.id.signup_as_close);
+
+        cardDonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(login.this,donersignup.class);
+                startActivity(i);
+
+            }
+        });
+
+        cardReceiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(login.this,receiversignup1.class);
+                startActivity(i);
+
+            }
+        });
+
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+
+            }
+        });
+
+
+        dialog.show();
+
+
 
 
     }

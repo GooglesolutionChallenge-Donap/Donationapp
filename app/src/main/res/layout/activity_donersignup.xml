@@ -130,7 +130,6 @@
                     android:paddingEnd="10dp"
                     android:textCursorDrawable="@drawable/cursor"
                     android:drawableLeft="@drawable/donersignup_passlock_img"
-                    android:drawableRight="@drawable/donersignup_passeye_img"
                     android:drawablePadding="10dp"
                     android:drawableTint="#7B8291"/>
 
@@ -278,6 +277,7 @@
 
 
             <soup.neumorphism.NeumorphButton
+                android:id="@+id/usersignup_btn"
                 style="@style/Widget.Neumorph.Button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
