@@ -13,6 +13,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import soup.neumorphism.NeumorphImageButton;
+
 public class fooddonor extends AppCompatActivity {
    //Drop down
     String[] donate =  {"NGO","Old Age Home","Shelter Home","Orphanage"};
@@ -20,6 +23,8 @@ public class fooddonor extends AppCompatActivity {
     ArrayAdapter<String> adapterItem;
     //Upload Image
     Button BSelectImage;
+//    back button
+    NeumorphImageButton backbtn;
 
     // One Preview Image
     ImageView IVPreviewImage;
@@ -31,10 +36,26 @@ public class fooddonor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fooddonor);
+
+//        change status bar color
         statusbar.blackiconstatusbar(fooddonor.this,R.color.light_bg);
 
-        autoCompleteText = findViewById(R.id.wheretodonate_autocompletetxt);
+        //back button function
 
+        backbtn=findViewById(R.id.donorfood_backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(fooddonor.this,donorhomepage.class);
+                startActivity(i);
+            }
+        });
+
+        //back btn functn ENDS
+
+
+//drop down menu
+        autoCompleteText = findViewById(R.id.wheretodonate_autocompletetxt);
         adapterItem = new ArrayAdapter<String>(this,R.layout.receiversignup1_orgcategorylist,donate);
         autoCompleteText.setAdapter(adapterItem);
 
@@ -45,6 +66,10 @@ public class fooddonor extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"You Selected: "+item,Toast.LENGTH_SHORT).show();
             }
         });
+
+//        image upload function starts
+
+
         BSelectImage = findViewById(R.id.BSelectImage);
         IVPreviewImage = findViewById(R.id.IVPreviewImage);
 

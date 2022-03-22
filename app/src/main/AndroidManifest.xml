@@ -10,20 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Donationapp">
         <activity
+            android:name=".DonorClothes"
+            android:exported="false" />
+        <activity
             android:name=".userinformationpage"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".fooddonor"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".receiversignup1"
             android:exported="false"
-            android:theme="@style/Theme.Donationapp.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Donationapp.NoActionBar"></activity>
         <activity
             android:name=".donersignup"
             android:exported="false" />
@@ -35,7 +33,7 @@
             android:exported="false" />
         <activity
             android:name=".homepage"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

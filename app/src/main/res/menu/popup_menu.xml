@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/donorclothes_orphanage1"
+        android:title="bal shram oprphange"
+
+        />
+    <item
+        android:id="@+id/donorclothes_orphanage2"
+        android:title="rainbow homes" />
+
+</menu>

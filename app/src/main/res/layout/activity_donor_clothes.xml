@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/donorclothes_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".DonorClothes">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--            back button  -->
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/donorclothes_backbtn"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+
+                android:src="@drawable/back_arrowbtnicon"
+                app:neumorph_shadowElevation="5dp"
+                app:neumorph_shapeType="basin" />
+
+<!--                    back button closes-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/donor_clothes_img">
+
+            </ImageView>
+
+            <soup.neumorphism.NeumorphTextView
+                android:id="@+id/donorclothes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/abril_fatface"
+                android:text="TIME TO DONATE"
+                android:textColor="@color/text_color"
+                android:textSize="30sp">
+
+            </soup.neumorphism.NeumorphTextView>
+
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/donorclothes_orphanage_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:clickable="true"
+                        app:neumorph_shadowColorLight="#74CAAE"
+                        app:neumorph_shadowElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/donorclothes_orphanage_img"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/donorclothes_orphanage_img"
+
+
+                                >
+
+                            </soup.neumorphism.NeumorphImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ORPHANAGE"
+                                android:textColor="@color/text_color"
+                                android:textSize="12sp"
+                                android:textStyle="bold"></TextView>
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/donorclothes_ngo_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:clickable="true"
+                        app:neumorph_shadowColorLight="#D5DD6A94"
+                        app:neumorph_shadowElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/donorclothes_ngo_img"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/donorclothes_ngo_img"
+
+
+                                >
+
+                            </soup.neumorphism.NeumorphImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NGO"
+                                android:textColor="@color/text_color"
+                                android:textSize="12sp"
+                                android:textStyle="bold"></TextView>
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/donorclothes_oldage_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:clickable="true"
+                        app:neumorph_shadowColorLight="#EFB939"
+                        app:neumorph_shadowElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/donorclothes_oldage_img"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/donorclothes_oldage_img"
+
+
+                                >
+
+                            </soup.neumorphism.NeumorphImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="OLD AGE"
+                                android:textColor="@color/text_color"
+                                android:textSize="12sp"
+                                android:textStyle="bold"></TextView>
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/donorclothes_shelter_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:clickable="true"
+                        app:neumorph_shadowColorLight="#2B8754"
+                        app:neumorph_shadowElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/donorclothes_shelter_img"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/donorclothes_shelter_img"
+
+
+                                >
+
+                            </soup.neumorphism.NeumorphImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="SHELTER HOMES"
+                                android:textColor="@color/text_color"
+                                android:textSize="12sp"
+                                android:textStyle="bold"></TextView>
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="20dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F4F4F4"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="FILL THE INFORMATION"
+                        android:textColor="@color/text_color"
+                        android:textSize="20dp">
+
+                    </TextView>
+
+                    <soup.neumorphism.NeumorphCardView
+                        style="@style/Widget.Neumorph.CardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        app:neumorph_shapeAppearance="@style/Base.V21.Theme.Neumorph">
+
+                        <EditText
+                            android:id="@+id/donorclothes_pickup"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_bg"
+                            android:hint="PICK UP ADDRESS"
+                            android:textColorHint="#48513D"
+                            android:inputType="textPostalAddress"
+                            android:paddingStart="20dp"
+                            android:padding="10dp"
+                            android:textCursorDrawable="@drawable/cursor"
+                            android:drawableLeft="@drawable/donorclothes_pickup_img"
+                            android:drawablePadding="20dp"
+                            android:drawableTint="#33372E"/>
+
+                    </soup.neumorphism.NeumorphCardView>
+                    <soup.neumorphism.NeumorphCardView
+                        style="@style/Widget.Neumorph.CardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        app:neumorph_shapeAppearance="@style/Base.V21.Theme.Neumorph">
+
+                        <EditText
+                            android:id="@+id/donorclothes_contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_bg"
+                            android:hint="CONTACT NUMBER"
+                            android:textColorHint="#5C7488"
+                            android:inputType="number"
+                            android:paddingStart="20dp"
+                            android:padding="10dp"
+                            android:textCursorDrawable="@drawable/cursor"
+                            android:drawableLeft="@drawable/donorclothes_contact_img"
+                            android:drawablePadding="20dp"
+                            android:drawableTint="#5E87AA"/>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_bg"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        app:neumorph_shapeAppearance="@style/Base.V21.Theme.Neumorph">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/light_bg">
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="SUMMER CLOTHES"
+                                android:textSize="17dp"
+                                android:button="@drawable/custom_checkbox"
+                                android:layout_marginStart="20dp"
+                                android:paddingStart="20dp"
+                                android:textColor="@color/text_color"
+                                >
+
+                            </CheckBox>
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="WINTER CLOTHES"
+                                android:textSize="17dp"
+                                android:button="@drawable/custom_checkbox"
+                                android:layout_marginStart="20dp"
+                                android:paddingStart="20dp"
+                                android:textColor="@color/text_color"
+                                >
+
+                            </CheckBox>
+
+                        </LinearLayout>
+
+
+
+                    </soup.neumorphism.NeumorphCardView>
+
+
+
+
+                </LinearLayout>
+
+
+            </soup.neumorphism.NeumorphCardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
