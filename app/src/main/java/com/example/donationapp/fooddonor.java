@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -37,6 +39,13 @@ public class fooddonor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fooddonor);
 
+        //removing titlebar form app
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_fooddonor);
+
+
 //        change status bar color
         statusbar.blackiconstatusbar(fooddonor.this,R.color.light_bg);
 
@@ -56,7 +65,7 @@ public class fooddonor extends AppCompatActivity {
 
 //drop down menu
         autoCompleteText = findViewById(R.id.wheretodonate_autocompletetxt);
-        adapterItem = new ArrayAdapter<String>(this,R.layout.receiversignup1_orgcategorylist,donate);
+        adapterItem = new ArrayAdapter<String>(this,R.layout.registersignup1_orgcategorylist,donate);
         autoCompleteText.setAdapter(adapterItem);
 
         autoCompleteText.setOnItemClickListener(new AdapterView.OnItemClickListener() {

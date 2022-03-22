@@ -17,13 +17,28 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--            back button start-->
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/donorsignup_backbtn"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/back_arrowbtnicon"
+                app:neumorph_shadowElevation="5dp"
+                app:neumorph_shapeType="basin" />
+
+            <!--back button ends -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="0dp"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/abril_fatface"
+                android:gravity="center"
                 android:text="New User ?"
                 android:textColor="#193566"
                 android:textSize="35sp"
@@ -32,34 +47,35 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="0dp"
                 android:fontFamily="@font/actor"
+                android:gravity="center"
                 android:text="Create Your Profile..."
                 android:textColor="#193566"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <soup.neumorphism.NeumorphCardView
                 style="@style/Widget.Neumorph.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/donersignup_name_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"
                     android:hint="Name"
                     android:inputType="textPersonName"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/donersignup_name_img"
-                    android:drawablePadding="10dp"
-                    android:drawableTint="#7B8291"/>
+                    android:textCursorDrawable="@drawable/cursor" />
 
             </soup.neumorphism.NeumorphCardView>
 
@@ -69,21 +85,22 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/donersignup_mail_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"
                     android:hint="E-Mail"
                     android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/donersignup_mail_img"
-                    android:drawablePadding="10dp"
-                    android:drawableTint="#7B8291"/>
+                    android:textCursorDrawable="@drawable/cursor" />
 
             </soup.neumorphism.NeumorphCardView>
 
@@ -93,21 +110,22 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/usersignup_phone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/donersignup_phone_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"
                     android:hint="Phone Number"
                     android:inputType="phone"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/donersignup_phone_img"
-                    android:drawablePadding="10dp"
-                    android:drawableTint="#7B8291"/>
+                    android:textCursorDrawable="@drawable/cursor" />
 
             </soup.neumorphism.NeumorphCardView>
 
@@ -117,21 +135,22 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/donersignup_passlock_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"
                     android:hint="Create Password"
                     android:inputType="textVisiblePassword"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/donersignup_passlock_img"
-                    android:drawablePadding="10dp"
-                    android:drawableTint="#7B8291"/>
+                    android:textCursorDrawable="@drawable/cursor" />
 
             </soup.neumorphism.NeumorphCardView>
 
@@ -141,21 +160,22 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/usersignup_confirmpass"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/donersignup_confirmpass_img"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#7B8291"
                     android:hint="Confirm Password"
                     android:inputType="textVisiblePassword"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/donersignup_confirmpass_img"
-                    android:drawablePadding="10dp"
-                    android:drawableTint="#7B8291"/>
+                    android:textCursorDrawable="@drawable/cursor" />
 
             </soup.neumorphism.NeumorphCardView>
 
@@ -174,19 +194,20 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_city"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/receiversignup1_city_img"
+                    android:drawablePadding="10dp"
                     android:hint="City"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/receiversignup1_city_img"
-                    android:drawablePadding="10dp"/>
+                    android:textCursorDrawable="@drawable/cursor" />
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
@@ -195,19 +216,20 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_street"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/receiversignup1_streetaddress_img"
+                    android:drawablePadding="10dp"
                     android:hint="Street Address"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/receiversignup1_streetaddress_img"
-                    android:drawablePadding="10dp"/>
+                    android:textCursorDrawable="@drawable/cursor" />
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
@@ -216,20 +238,21 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_pin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/receiversigup1_pincode_img"
+                    android:drawablePadding="10dp"
                     android:hint="Pin Code"
                     android:inputType="number"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/receiversignup1_pincode_img"
-                    android:drawablePadding="10dp"/>
+                    android:textCursorDrawable="@drawable/cursor" />
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
@@ -238,19 +261,20 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_state"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/receiversignup1_state_img"
+                    android:drawablePadding="10dp"
                     android:hint="State"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/receiversignup1_state_img"
-                    android:drawablePadding="10dp"/>
+                    android:textCursorDrawable="@drawable/cursor" />
             </soup.neumorphism.NeumorphCardView>
 
 
@@ -260,24 +284,24 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/donersignup_country"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
+                    android:drawableLeft="@drawable/receiversignup1_country_img"
+                    android:drawablePadding="10dp"
                     android:hint="Country"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/receiversignup1_country_img"
-                    android:drawablePadding="10dp"/>
+                    android:textCursorDrawable="@drawable/cursor" />
             </soup.neumorphism.NeumorphCardView>
 
 
             <soup.neumorphism.NeumorphButton
-                android:id="@+id/usersignup_btn"
                 style="@style/Widget.Neumorph.Button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -288,14 +312,38 @@
                 android:textColor="#ecf0f3"
                 app:neumorph_backgroundColor="#193566" />
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="80dp"
-                android:layout_marginBottom="10dp"
-                android:text="Have an Account? Log In"
-                android:textColor="#193566" />
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/actor"
+                    android:text="Already have an account?"
+                    android:textColor="#193566"
+                    android:paddingStart="100dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/actor"
+                    android:text="Login"
+                    android:textStyle="bold"
+                    android:textColor="#193566"
+                    android:textSize="15sp"
+                    android:paddingStart="5dp"/>
+
+            </LinearLayout>
+
+
+
+
 
 
         </LinearLayout>

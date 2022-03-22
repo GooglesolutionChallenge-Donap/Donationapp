@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 
@@ -23,6 +25,17 @@ public class DonorClothes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor_clothes);
+
+        //removing titlebar form app
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_donor_clothes);
+
+
+//        change status bar color
+        statusbar.blackiconstatusbar(DonorClothes.this,R.color.light_bg);
+
 
 //        'linking to xml id '
 
@@ -43,6 +56,7 @@ public class DonorClothes extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        //BACK BTN FUNCTN ENDS HERE
 
 
 //on click orphange list function

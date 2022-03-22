@@ -1,95 +1,60 @@
-//package com.example.donationapp;
-//
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import android.os.Bundle;
-//import android.widget.ArrayAdapter;
-//import android.widget.AutoCompleteTextView;
-//
-//public class receiversignup1 extends AppCompatActivity {
-//
-//    AutoCompleteTextView autoCompleteTextView;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_receiversignup1);
-//         autoCompleteTextView = findViewById(R.id.receiversignup1_autocompletetxt);
-//
-//        String []option = {"Organisation Category" , "NGO", "Orphanage", "Old-Age Home"};
-//
-//        ArrayAdapter arrayAdapter = new ArrayAdapter(this , R.layout.receiversignup1_orgcategorylist , option);
-//
-//        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString() , false);
-//
-//        autoCompleteTextView.setAdapter(arrayAdapter);
-//    }
-//}
+package com.example.donationapp;
 
+import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
-
-
-
-
-        package com.example.donationapp;
-
-        import androidx.appcompat.app.AppCompatActivity;
-
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.AutoCompleteTextView;
-        import android.widget.Toast;
+import soup.neumorphism.NeumorphImageButton;
 
 public class receiversignup1 extends AppCompatActivity {
-
-    String[] items =  {"Material","Design","Components","Android","5.0 Lollipop"};
-    AutoCompleteTextView autoCompleteTxt;
-    ArrayAdapter<String> adapterItems;
+    AutoCompleteTextView autoCompleteTextView;
+    NeumorphImageButton backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiversignup1);
 
-        //changing statusbar color
+        //removing titlebar form app
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_receiversignup1);
+
+//        change status bar color
         statusbar.blackiconstatusbar(receiversignup1.this,R.color.light_bg);
 
-        autoCompleteTxt = findViewById(R.id.receiversignup1_autocompletetxt);
 
-        adapterItems = new ArrayAdapter<String>(this,R.layout.receiversignup1_orgcategorylist,items);
-        autoCompleteTxt.setAdapter(adapterItems);
+        //back button function
 
-        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        backbtn=findViewById(R.id.receiversignup1_backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(),"Item: "+item,Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                Intent i= new Intent(receiversignup1.this,login.class);
+                startActivity(i);
             }
         });
+
+
+
+        // DROP DOWN CODE
+
+        autoCompleteTextView = findViewById(R.id.receiversignup1_autocompletetxt);
+
+        String []option = {"Organisation Category" , "NGO", "Orphanage", "Old-Age Home"};
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this , R.layout.registersignup1_orgcategorylist , option);
+        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString() , false);
+        autoCompleteTextView.setAdapter(arrayAdapter);
+
+        // DROPDOWN CODE ENDS HERE
+
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
