@@ -18,13 +18,29 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--            back button start-->
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/receiversignup1_backbtn"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/back_arrowbtnicon"
+                app:neumorph_shadowElevation="5dp"
+                app:neumorph_shapeType="basin" />
+
+            <!--back button ends -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_marginTop="1dp"
                 android:fontFamily="@font/abril_fatface"
-                android:text="Get Started !!"
+                android:text="Get Started!!"
                 android:textColor="#193566"
                 android:textSize="35sp"
                 android:textStyle="normal" />
@@ -32,12 +48,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="14dp"
+                android:gravity="center"
                 android:fontFamily="@font/actor"
                 android:text="Build Your Organization Profile..."
                 android:textColor="#193566"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
 
             <soup.neumorphism.NeumorphCardView
@@ -45,8 +60,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/receiversignup1_orgname"
@@ -54,15 +70,16 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
                     android:hint="Organisation Name"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textNoSuggestions"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:textCursorDrawable="@drawable/cursor"
                     android:drawableLeft="@drawable/receiversignup1_orgname_img"
                     android:drawablePadding="10dp"
-                    android:drawableTint="#7B8291"/>
+                    android:drawableTint="#7B8291" />
 
             </soup.neumorphism.NeumorphCardView>
+
 
 
             <RelativeLayout
@@ -74,11 +91,12 @@
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
-                    android:layout_marginEnd="10dp"></soup.neumorphism.NeumorphCardView>
-
-                     <!--              dropdown-->
+                    android:layout_marginEnd="10dp"
+                    app:neumorph_shapeType="pressed">
+                </soup.neumorphism.NeumorphCardView>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -94,8 +112,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:startIconDrawable="@drawable/receiversignup1_category_img"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                    app:startIconDrawable="@drawable/receiversignup1_orgcategory_img">
 
                     <AutoCompleteTextView
                         android:id="@+id/receiversignup1_autocompletetxt"
@@ -106,14 +123,12 @@
                         android:textSize="17sp"
                         android:padding="10dp"
                         android:background="@drawable/no_background"
-                        android:backgroundTint="@color/light_bg"
                         android:textColor="#7B8291"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
-
 
 
             <TextView
@@ -123,7 +138,7 @@
                 android:layout_marginTop="25dp"
                 android:text="Address"
                 android:textColor="#193566"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <soup.neumorphism.NeumorphCardView
                 style="@style/Widget.Neumorph.CardView"
@@ -131,7 +146,8 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/receiversignup1_city"
@@ -139,7 +155,6 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
                     android:hint="City"
-                    android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:textCursorDrawable="@drawable/cursor"
@@ -153,7 +168,8 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/receiversignup1_street"
@@ -161,7 +177,6 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
                     android:hint="Street Address"
-                    android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:textCursorDrawable="@drawable/cursor"
@@ -175,7 +190,8 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/receiversignup1_pin"
@@ -183,11 +199,11 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
                     android:hint="Pin Code"
-                    android:inputType="textEmailAddress"
+                    android:inputType="number"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:textCursorDrawable="@drawable/cursor"
-                    android:drawableLeft="@drawable/receiversignup1_pincode_img"
+                    android:drawableLeft="@drawable/receiversigup1_pincode_img"
                     android:drawablePadding="10dp"/>
             </soup.neumorphism.NeumorphCardView>
 
@@ -197,7 +213,8 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/receiversignup1_state"
@@ -205,7 +222,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
                     android:hint="State"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textNoSuggestions"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:textCursorDrawable="@drawable/cursor"
@@ -220,7 +237,8 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                app:neumorph_shapeType="pressed">
 
                 <EditText
                     android:id="@+id/receiversignup1_name"
@@ -228,7 +246,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
                     android:hint="Country"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textNoSuggestions"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:textCursorDrawable="@drawable/cursor"
@@ -249,14 +267,34 @@
                 android:textColor="#ecf0f3"
                 app:neumorph_backgroundColor="#193566" />
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="80dp"
-                android:layout_marginBottom="10dp"
-                android:text="Have an Account? Log In"
-                android:textColor="#193566" />
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/actor"
+                    android:text="Already have an account?"
+                    android:textColor="#193566"
+                    android:paddingStart="88dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/actor"
+                    android:text="Login"
+                    android:textStyle="bold"
+                    android:textColor="#193566"
+                    android:textSize="15sp"
+                    android:paddingStart="5dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -13,6 +15,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import soup.neumorphism.NeumorphImageButton;
+
 public class fooddonor extends AppCompatActivity {
    //Drop down
     String[] donate =  {"NGO","Old Age Home","Shelter Home","Orphanage"};
@@ -20,6 +25,8 @@ public class fooddonor extends AppCompatActivity {
     ArrayAdapter<String> adapterItem;
     //Upload Image
     Button BSelectImage;
+//    back button
+    NeumorphImageButton backbtn;
 
     // One Preview Image
     ImageView IVPreviewImage;
@@ -31,11 +38,34 @@ public class fooddonor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fooddonor);
+
+        //removing titlebar form app
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_fooddonor);
+
+
+//        change status bar color
         statusbar.blackiconstatusbar(fooddonor.this,R.color.light_bg);
 
-        autoCompleteText = findViewById(R.id.wheretodonate_autocompletetxt);
+        //back button function
 
-        adapterItem = new ArrayAdapter<String>(this,R.layout.receiversignup1_orgcategorylist,donate);
+        backbtn=findViewById(R.id.donorfood_backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(fooddonor.this,donorhomepage.class);
+                startActivity(i);
+            }
+        });
+
+        //back btn functn ENDS
+
+
+//drop down menu
+        autoCompleteText = findViewById(R.id.wheretodonate_autocompletetxt);
+        adapterItem = new ArrayAdapter<String>(this,R.layout.registersignup1_orgcategorylist,donate);
         autoCompleteText.setAdapter(adapterItem);
 
         autoCompleteText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -45,6 +75,10 @@ public class fooddonor extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"You Selected: "+item,Toast.LENGTH_SHORT).show();
             }
         });
+
+//        image upload function starts
+
+
         BSelectImage = findViewById(R.id.BSelectImage);
         IVPreviewImage = findViewById(R.id.IVPreviewImage);
 
