@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Donationapp">
         <activity
+            android:name=".receiverhomepage"
+            android:exported="false" />
+        <activity
             android:name=".receiversignup1"
             android:exported="false" />
         <activity
@@ -20,10 +23,10 @@
             android:exported="false" />
         <activity
             android:name=".userinformationpage"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".fooddonor"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".donorhomepage"
             android:exported="false" />

@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_bg"
+    android:background="#F4FAFF"
     tools:context=".homepage">
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-    android:src="@drawable/moon"
         android:layout_centerInParent="true"
-        android:transitionName="logo"/>
+        android:src="@drawable/logo"
+        android:transitionName="logo" />
 
     <TextView
         android:id="@+id/logo_text"

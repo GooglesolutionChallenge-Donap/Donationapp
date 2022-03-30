@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
+import soup.neumorphism.NeumorphButton;
 import soup.neumorphism.NeumorphImageButton;
 
 public class receiversignup1 extends AppCompatActivity {
@@ -21,11 +22,7 @@ public class receiversignup1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiversignup1);
 
-        //removing titlebar form app
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_receiversignup1);
 
 //        change status bar color
         statusbar.blackiconstatusbar(receiversignup1.this,R.color.light_bg);
@@ -42,6 +39,16 @@ public class receiversignup1 extends AppCompatActivity {
             }
         });
 
+        //submit button code
+
+      NeumorphButton sbmtbtn=findViewById(R.id.receiversignup1_submitbtn) ;
+      sbmtbtn.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent i=new Intent(receiversignup1.this,receiverhomepage.class);
+              startActivity(i);
+          }
+      });
 
 
         // DROP DOWN CODE
