@@ -168,7 +168,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/no_background"
-                    android:drawableLeft="@drawable/receiversignup1_pincode_img"
+                    android:drawableLeft="@drawable/receiversigup1_pincode_img"
                     android:drawablePadding="10dp"
                     android:drawableTint="#C4DBB9"
                     android:hint="Pin Code"

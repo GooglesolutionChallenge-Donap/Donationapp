@@ -18,11 +18,7 @@ public class donersignup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donersignup);
 
-        //removing titlebar form app
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_donersignup);
 
 //        change status bar color
         statusbar.blackiconstatusbar(donersignup.this,R.color.light_bg);
@@ -40,7 +36,7 @@ public class donersignup extends AppCompatActivity {
 
         //back btn functn ENDS
 
-
+// submit button
 
     }
 }

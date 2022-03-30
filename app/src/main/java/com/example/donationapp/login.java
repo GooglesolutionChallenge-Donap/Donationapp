@@ -15,12 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import soup.neumorphism.NeumorphButton;
 import soup.neumorphism.NeumorphCardView;
 
-public class login extends AppCompatActivity implements View.OnClickListener {
+public class login extends AppCompatActivity {
 
     TextView signuptext;
-    Button loginbtn;
+    NeumorphButton loginbtn;
     Dialog dialog;
 
 
@@ -31,13 +32,13 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         //removing titlebar form app
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
 
         //changing statusbar color
 
-        statusbar.blackiconstatusbar(login.this,R.color.light_bg);
+        statusbar.blackiconstatusbar(login.this, R.color.light_bg);
 
 
         //adding onclicklistener and id to variable
@@ -45,37 +46,49 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
 //        login btn
 
-        loginbtn=(Button) findViewById(R.id.login_btn);
-        loginbtn.setOnClickListener(this);
+        loginbtn = findViewById(R.id.login_btn);
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(login.this, "clcked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(login.this, receiverhomepage.class);
+                startActivity(intent);
+            }
+        });
+
 
         //sigup btn
 
-        signuptext=(TextView) findViewById(R.id.newuser_text);
-        signuptext.setOnClickListener(this);
+        signuptext = (TextView) findViewById(R.id.newuser_text);
+        signuptext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSignUpToast();
+            }
+        });
 
         // sigup as donor receiver card diaolg
 
         dialog = new Dialog(this);
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent i;
-        switch(v.getId()){
-            case R.id.login_btn: i=new Intent(login.this,donorhomepage.class);
-                startActivity(i);
-            break;
-
-            case R.id.newuser_text:
-                openSignUpToast();
-            break;
-            default:
-                Toast.makeText(this, "wrong option", Toast.LENGTH_SHORT).show();
-        }
-
-
-    }
-
+//    @Override
+//    public void onClick(View v) {
+//
+//        switch(v.getId()){
+//            case R.id.login_btn: Intent intent=new Intent(login.this,donorhomepage.class);
+//                startActivity(intent);
+//            break;
+//
+//            case R.id.newuser_text:
+//                openSignUpToast();
+//            break;
+//            default:
+//                Toast.makeText(this, "wrong option", Toast.LENGTH_SHORT).show();
+//        }
+//
+//
+//    }
 
 
     // Function of dialogue sigup as donor or receiver
@@ -96,7 +109,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         cardDonor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(login.this,donersignup.class);
+                Intent i = new Intent(login.this, donersignup.class);
                 startActivity(i);
 
             }
@@ -105,8 +118,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         cardReceiver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(login.this,receiversignup1.class);
-                startActivity(i);
+                Intent ii = new Intent(login.this, receiversignup1.class);
+                startActivity(ii);
 
             }
         });
@@ -123,7 +136,6 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         dialog.show();
 
 
-
-
     }
+
 }

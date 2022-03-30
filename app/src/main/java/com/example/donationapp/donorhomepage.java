@@ -17,11 +17,6 @@ public class donorhomepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donorhomepage);
 
-        //removing titlebar form app
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_donorhomepage);
 
         //changing statusbar color
         statusbar.blackiconstatusbar(donorhomepage.this,R.color.light_bg);
